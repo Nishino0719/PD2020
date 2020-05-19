@@ -2,7 +2,7 @@
 #include <stdlib.h> /* exit関数が定義されている */
 
 #define	MAXFILENAME 100 /* ファイル名の最大長 */
-#define ARRAYSIZE 100
+#define ARRAYSIZE 1000
 
 struct kisyou {
     int month;
@@ -11,12 +11,12 @@ struct kisyou {
     double kion;
 };
 
-int readfile(char filename[],struct *kisyoudata[],int amex){
+int readfile(char filename[],struct kisyou kisyoudata[],int amex){
     FILE *fp ; /* ファイルポインタ（ファイルの識別子） */
     int month, day, hour ;
     double data ;
     int size;
-    struct kisyou kisyoudata[ARRAYSIZE];
+    
 
     if ((fp = fopen(filename, "r")) == NULL) {
 	/* 以下の２行はファイルがオープンできなかった時の処理 */
@@ -36,15 +36,9 @@ int readfile(char filename[],struct *kisyoudata[],int amex){
         kisyoudata[size].hour = hour;
         kisyoudata[size].kion = data;
         size++;
-        // printf("%d月%d日%d時　：%.1f\n",
-        //     kisyoudata[size].month,kisyoudata[size].day,
-        //     kisyoudata[size].hour,kisyoudata[size].kion);
-        
     }
-
     /* ファイルのクローズ */
     fclose(fp) ;
-
     return size;
 }
 
@@ -65,6 +59,5 @@ int main(void)
             kisyoudata[i].month,kisyoudata[i].day,
             kisyoudata[i].hour,kisyoudata[i].kion);
     }
-
     return 0 ;
 }
