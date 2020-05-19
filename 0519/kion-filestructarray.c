@@ -2,7 +2,7 @@
 #include <stdlib.h> /* exit関数が定義されている */
 
 #define	MAXFILENAME 100 /* ファイル名の最大長 */
-#define ARRAYSIZE 1000
+#define ARRAYSIZE 100
 
 struct kisyou {
     int month;
@@ -11,7 +11,7 @@ struct kisyou {
     double kion;
 };
 
-int readfile(char filename[], int amex){
+int readfile(char filename[],struct *kisyoudata[],int amex){
     FILE *fp ; /* ファイルポインタ（ファイルの識別子） */
     int month, day, hour ;
     double data ;
@@ -30,11 +30,16 @@ int readfile(char filename[], int amex){
         fprintf(stderr,"Error:配列の容量不足\n");
         exit(2);
     }
+        // printf("%d,%d,%d,%.1f",month,day,hour,data);
         kisyoudata[size].month = month;
         kisyoudata[size].day = day;
         kisyoudata[size].hour = hour;
         kisyoudata[size].kion = data;
         size++;
+        // printf("%d月%d日%d時　：%.1f\n",
+        //     kisyoudata[size].month,kisyoudata[size].day,
+        //     kisyoudata[size].hour,kisyoudata[size].kion);
+        
     }
 
     /* ファイルのクローズ */
@@ -53,12 +58,13 @@ int main(void)
     fprintf(stderr, "データファイル名：") ;
     scanf("%s", filename) ; /* 端末からファイル名を入力 */
 
-    size = readfile(filename,ARRAYSIZE);
-
+    size = readfile(filename,kisyoudata,ARRAYSIZE);
+    // printf("%d\n",kisyoudata[0].month);
     for(i = 0;i < size; i++){
         printf("%d月%d日%d時　：%.1f\n",
             kisyoudata[i].month,kisyoudata[i].day,
             kisyoudata[i].hour,kisyoudata[i].kion);
     }
+
     return 0 ;
 }
