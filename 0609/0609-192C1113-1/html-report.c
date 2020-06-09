@@ -1,6 +1,8 @@
 #include<stdio.h>
 
 #include "kion-htmlreport.h"
+#include "kion-htmlreport2.h"
+#include "kion-htmlreport3.h"
 #include "kionstat.h"
 
 #define DAYARRAY 24
