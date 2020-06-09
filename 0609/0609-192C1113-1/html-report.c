@@ -23,7 +23,7 @@ void html_report(struct kisyou array[], int size)
     printf("<h1>日別気温統計データ</h1>\n");
     /* 表のヘッダー部分の開始 */
     printf("<table border=1>\n");
-    printf("<tr><th>月日</th><th>平均</th><th>最高</th><th>最低</th></tr>\n");
+    printf("<tr><th>月日</th><th>平均</th><th>最高</th><th>最低</th><th>日較差</th></tr>\n");
 
     /* 表の本体部分の出力 */
     for(i = 0; i < size; i += DAYARRAY){ /* 一日単位で処理 */
@@ -33,12 +33,16 @@ void html_report(struct kisyou array[], int size)
 	}
 
 	/* 表の本体の１行出力 */
-	printf("<tr><td>%d月%d日</td><td>%.1f</td><td>%.1f</td><td>%.1f</td></tr>\n",
+	printf("<tr><td>%d月%d日</td><td>%.1f</td><td>%.1f</td><td>%.1f</td>",
 			array[i].month, array[i].day, 
 			kion_heikin(kion, DAYARRAY),
 			kion_max(kion, DAYARRAY),
 			kion_min(kion, DAYARRAY));
+    red_nitikakusa(kion_nitikakusa(kion_max(kion, DAYARRAY),kion_min(kion, DAYARRAY)));
+
     }
+
+    
 
     printf("</table>\n"); /* 表の終端 */
     printf("</body>\n"); /* 文書本体の終端 */
