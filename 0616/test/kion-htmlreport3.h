@@ -1,0 +1,1 @@
+void red_nitikakusa(double);
