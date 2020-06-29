@@ -15,5 +15,3 @@ kionstat.o: kionstat.c kionstat.h
 
 clean: 
 	rm -f kion-htmlreport *.o a.out
-
-

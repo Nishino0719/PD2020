@@ -9,7 +9,7 @@ int readfile(char filename[], struct kisyou array[], int amax)
     FILE *fp;
     int month, day, hour;
     double data;
-    int size;
+    int size;   
 
     /* ここからはファイルの入力処理 */
     if((fp = fopen(filename, "r")) == NULL){
