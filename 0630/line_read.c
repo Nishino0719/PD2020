@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define MAXDATA 100
+#define MAXLINE 100
+
+int main(void){
+
+    int point[MAXDATA][2];
+    char buff[MAXLINE];
+    int n = 0;
+    int line = 0;
+    while(fgets(buff,MAXLINE,stdin) != NULL){
+        // 行を読み込んだら行番号を更新する
+        line++;
+        if(buff[0] == '#' || buff[0] == '\n'){
+            continue;
+        }
+        if(sscanf(buff,"%d %d", &point[n][0], &point[n][1]) != 2){
+            fprintf(stderr, "Error %d:  %s", n+1,buff);
+            exit(2);
+        }
+        n++;
+    }
+
+    for(int i = 0;i < n;i++){
+        printf("x = %d y = %d\n", point[i][0], point[i][1]);
+    }
+
+    return 0;
+}
