@@ -6,7 +6,7 @@ STACK *newStack(void)
   STACK *sp;
 
     sp = (STACK *)malloc(sizeof(STACK));
-    sp−>inde x = 0;
+    sp->index = 0;
 
     return sp;
 }
@@ -14,7 +14,7 @@ STACK *newStack(void)
 
 void stackPush(STACK *sp , int v)
 {
- sp−>data[sp−>inde x++] = v;
+ sp->data[sp->index++] = v;
 }
 
 
