@@ -1,7 +1,7 @@
-#def ine TRUE 1
-#def ine FALSE 0
+#define TRUE 1
+#define FALSE 0
 
-#def ine MAXSTACK 100
+#define MAXSTACK 100
 
 typedef struct stack{
     int data[MAXSTACK];
