@@ -1,0 +1,21 @@
+ 
+wordcount.hの関数マニュアル
+
+wordcountInit();
+単語の情報を収納するために連結リストの初期化をする。リストを使う前にはこれを実行する
+eordcountSearch(char *word);
+Char型の配列を引数に渡すとそのノードのポインタを返す。ノードがない場合はNULLを返す
+
+wordcountRegister(char *word);
+Char型の配列「word」を引数に渡すと出現回数を登録する
+
+WORDCOUNT *wordcountGetFirst(void);
+最初の単語のデータを取得する
+WORDCOUNT *wordcountGetNext(void);
+次の単語のデータを取得する
+
+char *wcGetWord(WORDCOUNT *wcp);
+wordcountSearch(word);によって得られた単語のポインタを引数にして渡すとそのノードの単語のポインタを返す
+
+int wcGetCount(WORDCOUNT *wcp);
+wordcountSearch(word);によって得られた単語のポインタを引数にして渡すとそのノードの出現回数をint型で返す
