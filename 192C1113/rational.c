@@ -1,9 +1,15 @@
 #include<stdio.h>
 #include "rational.h"
 
-RATIONAL newQueue(int a,int i,int j){
-    RATIONAL v;
-    v.queue[i][j] = a;
-    printf("確かに確認しました。%d,%dに%dですね\n",i,j,v.queue[i][j]);
-    return v;
+RATIONAL newQueue(RATIONAL a,int n){
+    printf("%d回文字を入力してください\n",n*n);
+    int input;
+    for(int i =0;i<n;i++){
+        for(int j=0; j<n;j++){
+        printf("(%d,%d) = ",i+1,j+1);
+        scanf("%d",&input);
+        a.queue[i][j] = input;
+        }
+    }
+    return a;
 }

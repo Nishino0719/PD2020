@@ -5,7 +5,7 @@ typedef struct rational {
 } RATIONAL;
 
 /* 有理数の生成 */
-RATIONAL newQueue(int a,int i,int j);
+RATIONAL newQueue(RATIONAL a,int n);
 
 // /* 有理数の簡約処理 */
 // RATIONAL raReduce(RATIONAL v);
