@@ -53,6 +53,7 @@ int main(void){
         printf("乗算ですね、計算するまでしばらくお待ちください\n");
         dataFin = raMul(dataA,dataB,N);
     }
+    queuePrint(dataFin,N);
 
     // 逆行列を持つかの判定機能
     printf("逆行列を持つかの判定をします。AとBどちらの行列を確認しますか。(2*2行列以外にはまだ対応していません。)\n");
@@ -71,9 +72,17 @@ int main(void){
             printf("%sは逆行列を持ちません。\n",&dataSymbol);
         }
 
+    // 逆行列生成機能
+    if(raReverseJudge(data,N)){
+        printf("逆行列は\n");
+        dataFin = raReverse(data,N);
+        queuePrint(dataFin,N);
+    }
+
+
 
     // 行列の表示機能
-    queuePrint(dataFin,N);
+    // queuePrint(dataFin,N);
     return 0;
 
 }
