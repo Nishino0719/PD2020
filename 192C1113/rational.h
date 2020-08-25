@@ -9,6 +9,7 @@ RATIONAL newQueue(int n);
 
 // /* 有理数の簡約処理 */
 // RATIONAL raReduce(RATIONAL v);
+double raGetElement(RATIONAL a,int x,int y);
 
 // /* 四則演算 */
 RATIONAL raRemul(RATIONAL a,int rem,int n);

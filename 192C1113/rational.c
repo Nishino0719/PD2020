@@ -81,7 +81,9 @@ RATIONAL raReverse(RATIONAL a,int n){
     return v;
 }
 
-
+double raGetElement(RATIONAL a,int x,int y){
+    return a.queue[x][y];
+}
 
 
 
