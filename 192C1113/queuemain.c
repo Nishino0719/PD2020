@@ -61,8 +61,8 @@ int main(void){
             printf("そんな行列は存在しません。\n");
         }
         printf("実数倍をします。一番最初に入力した行列を何倍しますか？\n");
-        int rem;
-        scanf("%d",&rem);
+        double rem;
+        scanf("%lf",&rem);
         dataFin = raRemul(data,rem,N);
     }else if(strcmp(add,&select) == 0){
         printf("加算ですね、計算するまでしばらくお待ちください\n");

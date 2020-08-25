@@ -44,7 +44,7 @@ RATIONAL raCramelQueue(int n,RATIONAL a,RATIONAL b){
     return v;
 }
 
-RATIONAL raRemul(RATIONAL a,int rem,int n){
+RATIONAL raRemul(RATIONAL a,double rem,int n){
     RATIONAL v;
     for(int i =0;i<n;i++){
         for(int j=0; j<n;j++){

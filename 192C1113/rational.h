@@ -12,7 +12,7 @@ RATIONAL ansQueue(int n);
 double raGetElement(RATIONAL a,int x,int y);
 
 // /* 四則演算 */
-RATIONAL raRemul(RATIONAL a,int rem,int n);
+RATIONAL raRemul(RATIONAL a,double rem,int n);
 RATIONAL raAdd(RATIONAL a, RATIONAL b,int n);
 RATIONAL raSub(RATIONAL a, RATIONAL b,int n);
 RATIONAL raMul(RATIONAL a, RATIONAL b,int n);
