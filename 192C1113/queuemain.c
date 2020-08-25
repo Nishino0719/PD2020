@@ -13,7 +13,6 @@ int main(void){
     char *remul = "remul";
     char *add = "add";
     char *sub = "sub";
-    char *mul = "mul";
     char select;
 
 
