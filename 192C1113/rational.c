@@ -118,6 +118,21 @@ void displayAns(RATIONAL a,RATIONAL b){
     printf("求める解は(x,y) = (%.2f,%.2f)\n",X,Y);
 }
 
+void displayResult(RATIONAL a,RATIONAL b){
+    // ガウスの消去法で階段を作る
+    double divi;
+    divi = a.queue[1][0]/a.queue[0][0];
+    for(int i=0;i<2;i++){
+        a.queue[1][i] = a.queue[1][i] - divi*a.queue[0][i];
+    }
+       b.queue[1][1] = b.queue[1][1] - divi*b.queue[0][0];
+    if(a.queue[1][0] == 0 && a.queue[1][1] == 0 && b.queue[1][1] == 0){
+        printf("この連立方程式は解を無数にもつ\n");
+    }else{
+        printf("この連立方程式は解を持たない\n");
+    }
+}
+
 int raInt(RATIONAL a,int n){
     return a.queue[0][0]*a.queue[1][1]-a.queue[1][0]*a.queue[0][1];
 }
