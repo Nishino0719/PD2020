@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include "rational.h"
 
-RATIONAL newQueue(RATIONAL a,int n){
+RATIONAL newQueue(int n){
+    RATIONAL a;
     printf("%d回文字を入力してください\n",n*n);
     int input;
     for(int i =0;i<n;i++){
@@ -12,4 +13,20 @@ RATIONAL newQueue(RATIONAL a,int n){
         }
     }
     return a;
+}
+
+
+
+
+
+
+
+
+
+void queuePrint(RATIONAL v,int n){
+    for(int i =0;i<n;i++){
+        for(int j=0; j<n;j++){
+        printf("(%d,%d) = %d\n",i+1,j+1,v.queue[i][j]);
+        }
+    }
 }

@@ -10,8 +10,9 @@ int main(void){
     scanf("%d",&N);
     int array[N*N];
 
-    newQueue(data,N);
-    printf("%d%d%d%dですです",data.queue[0][0],data.queue[0][1],data.queue[1][0],data.queue[1][1]);
+    data = newQueue(N);
+    // printf("%d%d%d%dですです",data.queue[0][0],data.queue[0][1],data.queue[1][0],data.queue[1][1]);
+    queuePrint(data,N);
     return 0;
 
 }
