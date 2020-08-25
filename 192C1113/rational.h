@@ -16,8 +16,8 @@ RATIONAL raAdd(RATIONAL a, RATIONAL b,int n);
 RATIONAL raSub(RATIONAL a, RATIONAL b,int n);
 RATIONAL raMul(RATIONAL a, RATIONAL b,int n);
 
-// /* 比較 */
-// int raEq(RATIONAL a, RATIONAL b);
+// /* 判別 */
+int raReverseJudge(RATIONAL a,int n);
 // int raGt(RATIONAL a, RATIONAL b);
 // int raLt(RATIONAL a, RATIONAL b);
 

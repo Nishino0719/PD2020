@@ -23,7 +23,10 @@ int main(void){
 
     dataA = newQueue(N);
     dataB = newQueue(N);
-    printf("二つの行列を作りました。どの計算をしたいですか。remul,add,subどれかを入力してください(該当しない場合は乗算として計算。)");
+
+
+    // 行列の演算機能
+    printf("二つの行列を作りました。どの計算をしたいですか。remul,add,subどれかを入力してください(該当しない場合は乗算として計算。)\n");
     scanf("%s",&select);
     if(strcmp(remul,&select) == 0){
         printf("実数倍をします。A,Bどちらの行列を対象にしますか？\n");
@@ -51,7 +54,25 @@ int main(void){
         dataFin = raMul(dataA,dataB,N);
     }
 
-    // 行列の表示
+    // 逆行列を持つかの判定機能
+    printf("逆行列を持つかの判定をします。AとBどちらの行列を確認しますか。(2*2行列以外にはまだ対応していません。)\n");
+        char dataSymbol;
+        scanf("%s",&dataSymbol);
+        if(strcmp(A,&dataSymbol) == 0){
+            data = dataA;
+        }else if(strcmp(B,&dataSymbol) == 0){
+            data = dataB;
+        }else{
+            printf("そんな行列は存在しません。\n");
+        }
+        if(raReverseJudge(data,N)){
+            printf("%sは逆行列を持ちます。\n",&dataSymbol);
+        }else{
+            printf("%sは逆行列を持ちません。\n",&dataSymbol);
+        }
+
+
+    // 行列の表示機能
     queuePrint(dataFin,N);
     return 0;
 

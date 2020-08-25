@@ -55,7 +55,17 @@ RATIONAL raMul(RATIONAL a, RATIONAL b,int n){
     return v;
 }
 
-
+// 逆行列を持つかの判定、2*2行列の場合は行列式の値が0であれば逆行列を持つ。
+int raReverseJudge(RATIONAL a,int n){
+    if(n == 2){
+        if((a.queue[0][0]*a.queue[1][1]-a.queue[1][0]*a.queue[0][1]) != 0){
+            return 1;
+        }
+    }else{
+        printf("掃き出し法を使って逆行列を求めます。今回の課題の範囲外\n");
+    }
+    return 0;
+}
 
 
 
