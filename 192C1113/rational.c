@@ -15,6 +15,46 @@ RATIONAL newQueue(int n){
     return a;
 }
 
+RATIONAL raRemul(RATIONAL a,int rem,int n){
+    RATIONAL v;
+    for(int i =0;i<n;i++){
+        for(int j=0; j<n;j++){
+        v.queue[i][j] = rem*(a.queue[i][j]);
+        }
+    }
+    return v;
+}
+RATIONAL raAdd(RATIONAL a, RATIONAL b,int n){
+    RATIONAL v;
+    for(int i =0;i<n;i++){
+        for(int j=0; j<n;j++){
+        v.queue[i][j] = a.queue[i][j] + b.queue[i][j];
+        }
+    }
+    return v;
+}
+RATIONAL raSub(RATIONAL a, RATIONAL b,int n){
+    RATIONAL v;
+    for(int i =0;i<n;i++){
+        for(int j=0; j<n;j++){
+        v.queue[i][j] = a.queue[i][j] - b.queue[i][j];
+        }
+    }
+    return v;
+}
+RATIONAL raMul(RATIONAL a, RATIONAL b,int n){
+    RATIONAL v;
+    for(int i =0;i<n;i++){
+        for(int j=0; j<n;j++){
+            v.queue[i][j] = 0;
+            for(int k=0;k<n;k++){
+                v.queue[i][j] += a.queue[i][k]*b.queue[k][j];
+            }
+        }
+    }
+    return v;
+}
+
 
 
 

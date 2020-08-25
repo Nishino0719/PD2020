@@ -11,10 +11,10 @@ RATIONAL newQueue(int n);
 // RATIONAL raReduce(RATIONAL v);
 
 // /* 四則演算 */
-// RATIONAL raAdd(RATIONAL a, RATIONAL b);
-// RATIONAL raSub(RATIONAL a, RATIONAL b);
-// RATIONAL raMul(RATIONAL a, RATIONAL b);
-// RATIONAL raDiv(RATIONAL a, RATIONAL b);
+RATIONAL raRemul(RATIONAL a,int rem,int n);
+RATIONAL raAdd(RATIONAL a, RATIONAL b,int n);
+RATIONAL raSub(RATIONAL a, RATIONAL b,int n);
+RATIONAL raMul(RATIONAL a, RATIONAL b,int n);
 
 // /* 比較 */
 // int raEq(RATIONAL a, RATIONAL b);
