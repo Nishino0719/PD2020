@@ -6,6 +6,11 @@ int main(void){
     RATIONAL data;
     RATIONAL dataA;
     RATIONAL dataB;
+    RATIONAL ReverceA;
+    RATIONAL Xque;
+    RATIONAL Yque;
+
+    RATIONAL dataAns;
     RATIONAL dataFin;
     int N;
     char *A = "A";
@@ -13,16 +18,39 @@ int main(void){
     char *remul = "remul";
     char *add = "add";
     char *sub = "sub";
+    char *yes = "yes";
     char select;
 
 
-    printf("?*?行列にしますか\n");
+    printf("?*?行列にしますか(連立方程式を求める場合は2を入力しなければならない)\n");
     scanf("%d",&N);
     int array[N*N];
+    if(N==2){
+        printf("連立方程式の解を求めますか？求める場合はyesを入力\n");
+        char rep;
+        scanf("%s",&rep);
+        if(strcmp(yes,&rep) == 0){
+            dataA = newQueue(N);
+            dataAns = ansQueue(N);
+            if(raReverseJudge(dataA,N)){
+                double X,Y;
+                printf("この連立方程式は解を持つ\n");
+                ReverceA = raReverse(dataA,N);
+                double answer[2];
+                displayAns(ReverceA,dataAns);
+                // Xque = raCramelQueue(0,dataA,dataAns);
+                // Yque = raCramelQueue(1,dataA,dataAns);
+                // X = 1.0*raInt(Xque,N)/raInt(dataA,N);
+                // Y = 1.0*raInt(Yque,N)/raInt(dataA,N);
+                // Y = raCramelQueue(1,dataA,dataAns)/ raReverse(dataA,N);
+            }else{
+                printf("この連立方程式は解を持たない。\n");
+            }
+        }
+    }
 
-
-    dataA = newQueue(N);
-    dataB = newQueue(N);
+    // dataA = newQueue(N);  
+    // dataB = newQueue(N);
 
 
     // 行列の演算機能
@@ -80,24 +108,28 @@ int main(void){
     // }
 
     // 行列要素取得機能
-    printf("AとBどちらの行列の要素を取得しますか。\n");
-        char dataSymbol;
-        scanf("%s",&dataSymbol);
-        if(strcmp(A,&dataSymbol) == 0){
-            data = dataA;
-        }else if(strcmp(B,&dataSymbol) == 0){
-            data = dataB;
-        }else{
-            printf("そんな行列は存在しません。\n");
-        }
-    printf("どの要素を取得したいですか？空白を開けて入力してください[?][?]");
-    int x,y;
-    scanf("%d %d",&x,&y);
-    if(x > 0 && x < N+1 && y > 0 && y < N+1){
-        printf("[%d][%d] = %.2f\n",x,y,raGetElement(data,x-1,y-1));
-    }else{
-        printf("行列の範囲外です\n");
-    }
+    // printf("AとBどちらの行列の要素を取得しますか。\n");
+    //     char dataSymbol;
+    //     scanf("%s",&dataSymbol);
+    //     if(strcmp(A,&dataSymbol) == 0){
+    //         data = dataA;
+    //     }else if(strcmp(B,&dataSymbol) == 0){
+    //         data = dataB;
+    //     }else{
+    //         printf("そんな行列は存在しません。\n");
+    //     }
+    // printf("どの要素を取得したいですか？空白を開けて入力してください[?][?]");
+    // int x,y;
+    // scanf("%d %d",&x,&y);
+    // if(x > 0 && x < N+1 && y > 0 && y < N+1){
+    //     printf("[%d][%d] = %.2f\n",x,y,raGetElement(data,x-1,y-1));
+    // }else{
+    //     printf("行列の範囲外です\n");
+    // }
+
+
+
+
 
     // 行列の表示機能
     // queuePrint(dataFin,N);
