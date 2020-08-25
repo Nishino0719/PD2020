@@ -67,6 +67,19 @@ int raReverseJudge(RATIONAL a,int n){
     return 0;
 }
 
+RATIONAL raReverse(RATIONAL a,int n){
+    RATIONAL v;
+    int param = a.queue[0][0]*a.queue[1][1]-a.queue[1][0]*a.queue[0][1];
+    if(n == 2){
+        v.queue[0][0] = a.queue[1][1]/param;
+        v.queue[0][1] = -a.queue[0][1]/param;
+        v.queue[1][0] = -a.queue[1][0]/param;
+        v.queue[0][1] = a.queue[0][0]/param;
+    }else{
+        printf("掃き出し法を使って逆行列を求めます。今回の課題の範囲外\n");
+    }
+    return v;
+}
 
 
 
@@ -76,7 +89,7 @@ int raReverseJudge(RATIONAL a,int n){
 void queuePrint(RATIONAL v,int n){
     for(int i =0;i<n;i++){
         for(int j=0; j<n;j++){
-        printf("(%d,%d) = %d\n",i+1,j+1,v.queue[i][j]);
+        printf("(%d,%d) = %.2f\n",i+1,j+1,v.queue[i][j]);
         }
     }
 }
